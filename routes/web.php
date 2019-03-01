@@ -18,6 +18,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::resource('clients', 'ClienteController');
     Route::resource('payment', 'PaymentController');
     Route::resource('history', 'HistoryController');
+    Route::resource('company', 'CompanyController');
     Route::get('/', function () {
         return view('index.index');
     });

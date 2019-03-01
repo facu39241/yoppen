@@ -11,7 +11,7 @@ Yoppen | Index
     <section class="content-header">
 
     <div class="alert alert-warning alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="false">×</button>
       <h5><i class="icon fa fa-warning"></i> Atencion!</h5>
        No se ha verificado su correo en la base de datos. Por favor verifique el correo electronico 
        para poder obtener una mayor seguridad en el sistema.

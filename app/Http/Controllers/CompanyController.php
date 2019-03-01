@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CompanyRequest;
 
+use App\Company;
+use Illuminate\Support\Facades\Storage;
 class CompanyController extends Controller
 {
     /**
@@ -13,7 +16,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $company = Company::all();
+        return view('company.index')->with(['company' => $company ]);
     }
 
     /**

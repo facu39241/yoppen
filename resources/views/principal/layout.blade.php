@@ -18,14 +18,7 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
 
-  <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic')}}">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -54,15 +47,8 @@
         <ul class="nav navbar-nav">
           <li class="dropdown user user-menu">
             <ul class="dropdown-menu">
-              <!-- User image -->
-
-              <!-- Menu Body -->
-
-                <!-- /.row -->
               </li>
-              <!-- Menu Footer-->
-             
-          <!-- Control Sidebar Toggle Button -->
+      
           
         </ul>
       </div>
@@ -75,11 +61,10 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-      <!-- Sidebar user panel -->
 
-      <!-- search form -->
      
-      <!-- /.search form -->
+      <!-- Usuario ingresante- nombre y estado -->
+
       <div class="user-panel">
         <div class="pull-left image">
           <img src="../../dist/img/default-user.png" class="img-circle" alt="User Image">
@@ -89,13 +74,59 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-      <!-- sidebar menu: : style can be found in sidebar.less -->
+
+      <!--botones del menu principal  -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu De Navegación</li>
 
         <li><a href="/index"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
 
-        <li><a href="/articles"><i class="fa fa-archive"></i> <span>Artículos</span></a></li>
+        <li class="treeview menu-open">
+          <a href="/payment">
+            <i class="fa fa-wrench"></i>
+            <span>Mantenimiento</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: unblock;">
+            <li><a href="/company"><i class="fa fa-circle-o"></i> Sucursal</a></li>
+            <li><a href="/users"><i class="fa fa-circle-o"></i> Empleados </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Tipos de facturas </a></li>
+
+          </ul>
+        </li>
+
+        <li class="treeview menu-open">
+          <a href="/payment">
+            <i class="fa fa-cubes"></i>
+            <span>Almacén</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: unblock;">
+            <li><a href="/articles"><i class="fa fa-circle-o"></i> Articulos</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Categorias </a></li>
+
+          </ul>
+
+        </li>
+        <li class="treeview menu-open">
+          <a href="/payment">
+            <i class="fa fa-shopping-cart"></i>
+            <span>Compras</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: unblock;">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+            <li><a href="/provisioners"><i class="fa fa-circle-o"></i> Proveedores </a></li>
+
+          </ul>
+        </li>
+
         <li class="treeview menu-open">
           <a href="/payment">
             <i class="fa fa-dollar"></i>
@@ -105,19 +136,70 @@
             </span>
           </a>
           <ul class="treeview-menu" style="display: unblock;">
-            <li><a href="/history"><i class="fa fa-circle-o"></i> Historial de ventas</a></li>
             <li><a href="/payment"><i class="fa fa-circle-o"></i> Realizar venta</a></li>
+            <li><a href="/clients"><i class="fa fa-circle-o"></i> Clientes</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Créditos</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Deudas Pendientes</a></li>
+
 
           </ul>
         </li>
-        <li><a href="/clients"><i class="fa fa-drivers-license-o"></i> <span>Clientes</span></a></li>
 
-        <li><a href="/provisioners"><i class="fa fa-truck"></i> <span>Proveedores</span></a></li>
+        <li class="treeview menu-open">
+          <a href="/payment">
+            <i class="fa  fa-search"></i>
+            <span>Consultas Compras</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: unblock;">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Compras Generales </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Compras Detalladas</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Compras Gral. Proveedores</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Compras Det. Proveedores</a></li>
+          </ul>
+        </li>
 
-        <li><a href="/users"><i class="fa fa-user-circle-o"></i> <span>Usuarios</span></a></li>
+        <li class="treeview menu-open">
+          <a href="/payment">
+            <i class="fa  fa-search"></i>
+            <span>Consultas Ventas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: unblock;">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Generales </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Detalladas</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Pendientes</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ventas de Contado</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ventas a Crédito</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ventas por Cliente</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ventas por Empleado</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Mensuales</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview menu-open">
+          <a href="/payment">
+            <i class="fa fa-unlock-alt"></i>
+            <span>Seguridad</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: unblock;">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Copia de seguridad</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#"><i class="fa fa-book"></i> <span>Ayuda</span></a></li>
+
+        <li><a href="/provisioners"><i class="fa  fa-envelope"></i> <span>Acerca de</span></a></li>
 
         <li>
-        <a class="dropdown-item" href="{{ route('logout') }}"
+        <a class="fa fa-sign-out" href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
           {{ __('Cerrrar Sesion') }}
@@ -128,49 +210,29 @@
         </form>
       </ul>
     </section>
-    <!-- /.sidebar -->
+
   </aside>
 
-  <!-- =============================================== -->
+
 
   @yield('content')
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 0.1.0
+      <b>Version</b> 0.2.0
     </div>
-    <strong>Copyright &copy; 2018 .</strong> All rights
+    <strong>Copyright &copy; 2019 .</strong> All rights
     reserved.
   </footer>
 
-  <!-- Control Sidebar -->
- 
-    <!-- Create the tabs -->
-
-    <!-- Tab panes -->
     <div class="tab-content">
-      <!-- Home tab content -->
    
-        <!-- /.control-sidebar-menu -->
-
-     
-        <!-- /.control-sidebar-menu -->
 
       </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
       
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      
-          <!-- /.form-group -->
-
-          <!-- /.form-group -->
-
-          <!-- /.form-group -->
         </form>
       </div>
-      <!-- /.tab-pane -->
+   
     </div>
   </aside>
   <!-- /.control-sidebar -->

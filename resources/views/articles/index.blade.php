@@ -46,7 +46,7 @@ Yoppen | Artículos
                 <tbody>
 
             @foreach($articles as $article)
-            @include('articles.modal')
+           
             @include('articles.modify')
             @include('articles.delete')
             @include('articles.view')
@@ -78,6 +78,7 @@ Yoppen | Artículos
                   </td>
                 </tr>
             @endforeach
+            @include('articles.modal')
                 </tbody>
                 <tfoot>
                 <tr>
