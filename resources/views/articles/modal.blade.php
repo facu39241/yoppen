@@ -46,12 +46,12 @@
 
           <div class="form-group">
            <label>Descripcíon</label>
-           <textarea class="form-control" rows="3" placeholder="Descripcíon ..." name="description"></textarea>
+           <textarea class="form-control" rows="3" placeholder="Descripcíon del articulo" name="description"></textarea>
           </div>
 
           <div class="form-group">
             <label for="exampleInputFile">Imagen</label>
-            <input type="file" name="photo" class="form-control" required>
+            <input type="file" name="photo" class="form-control" >
             <p class="help-block">JPN solamente.</p>
           </div>
 

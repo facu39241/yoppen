@@ -32,7 +32,7 @@ Yoppen | Facturacíon
                  </span>
                 </div>
             </tr>
-
+        
   <tr>
     <th>Nombre y Apellido <input type="text" class="form-control"  disabled=""></th>
     <th>Dirección <input type="text" class="form-control"  disabled=""></th>

@@ -1,6 +1,6 @@
 @extends('principal.layout')
 @section('title') 
-Yoppen | Usuarios
+Yoppen | Empleados
 @endsection
 @section('content')
 
@@ -9,7 +9,7 @@ Yoppen | Usuarios
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h2>
-        Usuarios.
+        Empleados.
       </h2>
       
     </section>
@@ -18,7 +18,7 @@ Yoppen | Usuarios
     <section class="content">
 		<div class="box">
             <div class="box-header">
-              <h3 class="box-title">Usuarios con acceso al sistema.</h3>
+              <h3 class="box-title">Empleados que cuentan con acceso al sistema.</h3><a  data-toggle="modal" data-target="/register" class='btn btn-primary pull-right'><i class='fa fa-plus'></i></a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -30,6 +30,9 @@ Yoppen | Usuarios
                   <th>Nombre</th>
                   <th>Email</th>
                   <th>Puesto</th>
+                  <th>Fecha de alta</th>
+                  <th>Acciones</th>
+
                 </tr>
 
 
@@ -49,6 +52,8 @@ Yoppen | Usuarios
                   <th>Nombre</th>
                   <th>Email</th>
                   <th>Puesto</th>
+                  <th>Fecha de alta</th>
+                  <th>Acciones</th>
                 </tr>
 
 
