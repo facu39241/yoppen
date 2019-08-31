@@ -46,21 +46,6 @@ class ArticlesSeeder extends Seeder
             'stock'=> '70',
         ]);
 
-        DB::table('provisioners')->insert([
-
-            'name'=> 'Topper inc.',
-            'direccion'=> 'parque indutrial 13 Bs As.',
-            'phone'=> '11555998866',
-            'cuit'=> '15551115',
-        ]);
-
-        
-        DB::table('provisioners')->insert([
-
-            'name'=> 'Cascos Inc.',
-            'direccion'=> 'parque indutrial 80 Bs As.',
-            'phone'=> '12121212121',
-            'cuit'=> '22211123',
-        ]);
+      
     }
 }
