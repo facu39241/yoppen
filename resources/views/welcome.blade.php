@@ -72,18 +72,21 @@
                         <a href="{{ url('/index') }}">Volver</a>
                     @else
                         <a href="{{ route('login') }}">Ingresar</a>
-                        
-                   
+
+
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                  <br> <strong>Yoppen  </strong>   
-                  <br>  Indumentaria y Elementos de Seguridad 
-                </div>
-                
+               <div class="row">
+                  <div class="title m-b-md">
+                    <br> <strong>Yoppen  </strong>
+                    <br>  Indumentaria y Elementos de Seguridad
+                  </div>
+                  
+               </div>
+
             </div>
         </div>
     </body>

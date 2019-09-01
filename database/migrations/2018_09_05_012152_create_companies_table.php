@@ -20,6 +20,7 @@ class CreateCompaniesTable extends Migration
             $table->string('responsable');
             $table->string('direction');
             $table->string('city');
+            $table->string('cuit');
             $table->date('date_init');
             $table->string('phone');
             $table->timestamps();

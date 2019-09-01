@@ -16,7 +16,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company = Company::all();
+        $company = Company::first();
         return view('company.index')->with(['company' => $company ]);
     }
 
@@ -38,7 +38,22 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $company = new Company;
+     $company->fill(
+          $request->only(
+             'company_id',
+             'name',
+             'email',
+             'responsable',
+             'direction',
+             'city',
+             'date_init',
+             'phone',
+             'cuit'
+          )
+     );
+     $company->save();
+     return redirect()->to('company');
     }
 
     /**

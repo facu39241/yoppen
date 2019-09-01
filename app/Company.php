@@ -8,23 +8,20 @@ use App\Payment;
 class Company extends Model
 {
     protected $fillable = [
-        'name',
+      'name',
 		'email',
 		'responsable',
 		'direction',
 		'city',
 		'date_init',
-		'phone',
+      'cuit',
+		'phone'
 	];
-	
+
 	public function payments()
 	{
 		return $this->belongsTo(Payment::class);
 	}
+
+
 }
-
-
-
-
-
-
