@@ -35,11 +35,12 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ClienteRequest $request) {
+    public function store(ClienteRequest $request)
+    {
         $client = new Client;
         $client->fill(
             $request->only(
-              
+
                 'name',
                 'direction',
                 'phone',
@@ -50,8 +51,7 @@ class ClienteController extends Controller
         );
         $client->save();
         return redirect()->to('clients');
-
-     }
+    }
 
     /**
      * Display the specified resource.
