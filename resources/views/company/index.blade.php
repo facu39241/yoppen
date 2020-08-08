@@ -5,7 +5,23 @@ Yoppen | Sucursal
 @section('content')
 
 <style>
+  .title {
+    text-decoration: underline #000000 !important;
+    font-size: 22px !important;
+    color: #000000 !important;
+  }
 
+  .compania {
+    font-size: 25px !important;
+  }
+
+  .title-contenedor {
+    padding-bottom: 30px;
+  }
+
+  .bt-modificar {
+    padding-top: 34px;
+  }
 </style>
 <!-- contenedor-->
 <div class="content-wrapper">
@@ -24,18 +40,19 @@ Yoppen | Sucursal
           </div>
           <!-- inicio del contenedor -->
           <div class="container">
-            <!-- Fila de nombre y direccìon -->            
+            <h3 class="title-contenedor">Aquí se encuentran los datos de la facturacion de la empresa.</h3>
+            <!-- Fila de nombre y direccìon -->
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="datos-form">
-                  <label>Nombre de la Empresa:</label>
-                  <input id="name" name="nombre_empresa" value="{{$company->name}}" class="form-control" disabled="" type="text">
+                  <label class="title">Nombre de la Empresa:</label>
+                  <p class="compania">{{$company->name}}</p>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group has-success">
-                  <label>Dirección: </label>
-                  <input id="direccion" name="direccion_empresa" value="{{$company->direction}}" class="form-control" disabled="" type="text">
+                  <label class="title">Dirección: </label>
+                  <p class="compania">{{$company->direction}}</p>
                 </div>
               </div>
             </div>
@@ -43,14 +60,14 @@ Yoppen | Sucursal
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group has-success">
-                  <label>Teléfono:</label>
-                  <input id="telefono" name="telefono_empresa" value="{{$company->phone}}" class="form-control" disabled="" type="number">
+                  <label class="title">Teléfono:</label>
+                  <p class="compania">{{$company->phone}}</p>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group has-success">
-                  <label>IVA </label>
-                  <input id="iva" name="iva_empresa" value="{{$company->responsable}}" class="form-control" disabled="" type="text">
+                  <label class="title">IVA </label>
+                  <p class="compania">{{$company->responsable}}</p>
                 </div>
               </div>
             </div>
@@ -58,14 +75,14 @@ Yoppen | Sucursal
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group has-success">
-                  <label>inicio de actividad: </label>
-                  <input id="inicio_act" name="inicio_act_empresa" value="{{$company->date_init}}" class="form-control" disabled="" type="text" data-mask>
+                  <label class="title">inicio de actividad: </label>
+                  <p class="compania">{{$company->date_init}}</p>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group has-success">
-                  <label>Email: </label>
-                  <input id="email" name="email_empresa" value="{{$company->email}}" class="form-control" disabled="" type="email">
+                  <label class="title">Email: </label>
+                  <p class="compania">{{$company->email}}</p>
                 </div>
               </div>
             </div>
@@ -73,20 +90,25 @@ Yoppen | Sucursal
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group has-success">
-                  <label>Provincia: </label>
-                  <input id="name" name="nombre_empresa" value="{{$company->city}}" class="form-control" disabled="" type="text" data-mask>
+                  <label class="title">Provincia: </label>
+                  <p class="compania">{{$company->city}}</p>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group has-success">
-                  <label>CUIT: </label>
-                  <input id="name" name="nombre_empresa" value="{{$company->cuit}}" class="form-control" disabled="" type="text">
+                  <label class="title">CUIT: </label>
+                  <p class="compania">{{$company->cuit}}</p>
                 </div>
               </div>
             </div>
-            <td>
-              <button type="button" data-toggle="modal" name="modify" data-target="#modify-default-{{$company->id}}" class="btn btn-block btn-warning btn-lg">Modificar</button>
-            </td>
+            <div class="row btn-modificar">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <td>
+                  <button type="button" class="btn btn-warning " data-toggle="modal" name="modify" data-target="#modify-default-{{$company->id}}">Modificar</button>
+                </td>
+              </div>
+            </div>
+
           </div>
           <div class="box-body">
             <div class="chart">

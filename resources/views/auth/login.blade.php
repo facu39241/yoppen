@@ -37,7 +37,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Inicia sesion para continuar</p>
+    <p class="login-box-msg">Inicia sesion para ingresar al sistema de ventas</p>
 
      <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -95,11 +95,7 @@
                         </div>
                     </form>
 
-    <div class="social-auth-links text-center">
-      <p>- O -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Ingresa con Facebook</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Ingresa con Google+</a>
-    </div>
+    
     <!-- /.social-auth-links -->
 
    

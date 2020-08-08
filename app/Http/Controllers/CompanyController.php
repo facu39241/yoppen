@@ -85,9 +85,20 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(company $company)
     {
-        //
+        $company->name = request()->name;
+        $company->email = request()->email;
+        $company->responsable = request()->responsable;
+        $company->direction = request()->direction;
+        $company->city = request()->city;
+        $company->date_init = request()->date_init;
+        $company->phone = request()->phone;
+        $company->cuit = request()->cuit;
+        
+        $company->save();
+
+        return redirect('/company'); 
     }
 
     /**
