@@ -5,18 +5,18 @@
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span></button>
-            <h4 class="modal-title">Editar articulo</h4>
+        <h4 class="modal-title">Editar articulo</h4>
       </div>
 
       <div class="modal-body">
-               
+
         <form action="/articles/{{$article->id}}" method="POST" role="form">
-        {{ method_field('PATCH') }}
-        {{ csrf_field() }}
+          {{ method_field('PATCH') }}
+          {{ csrf_field() }}
 
           <div class="form-group">
             <label for="exampleInputEmail1">Proveedor</label>
-            <select class="form-control"  name="provisioner_id" >
+            <select class="form-control" name="provisioner_id">
               @foreach($provisioners as $provisioner)
               <option value='{{$provisioner->id}}'>{{$provisioner->name}} </option>
               @endforeach
@@ -24,8 +24,24 @@
           </div>
 
           <div class="form-group">
+            <label for="exampleInputEmail1">Categoria</label>
+            <select class="form-control" name="category_id[]" multiple>
+            @foreach($categories as $category)
+            <option value='{{$category->id}}'
+              @foreach($article->categories as $ArticleCategory)
+                @if($category->id == $ArticleCategory->id)
+                  selected
+                  @break
+                @endif
+              @endforeach
+              >{{$category->name}}</option>
+            @endforeach
+            </select>
+          </div>
+
+          <div class="form-group">
             <label for="exampleInputEmail1">Nombre del producto</label>
-            <input type="text" class="form-control" value="{{$article->name}}" name="name" placeholder="Ingrese nombre" required >
+            <input type="text" class="form-control" value="{{$article->name}}" name="name" placeholder="Ingrese nombre" required>
           </div>
 
           <div class="form-group">
@@ -39,15 +55,15 @@
             <input type="text" class="form-control" value="{{$article->price}}" name="price" required>
             <span class="input-group-addon">.00</span>
           </div>
-      
+
           <div class="form-group">
             <label for="exampleInputEmail1">Cantidad en Stock</label>
             <input type="number" class="form-control" value="{{$article->stock}}" name="stock" placeholder="Stock" required>
           </div>
 
           <div class="form-group">
-           <label>Descripcíon</label>
-           <textarea class="form-control" rows="3" placeholder="Descripcíon ..."  name="descripcion">{{$article->description}}</textarea>
+            <label>Descripcíon</label>
+            <textarea class="form-control" rows="3" placeholder="Descripcíon ..." name="descripcion">{{$article->description}}</textarea>
           </div>
 
           <div class="form-group">
@@ -58,7 +74,7 @@
           </div>
 
           <div class="form-group">
-        </div>
+          </div>
       </div>
 
       <div class="modal-footer">
@@ -66,6 +82,6 @@
         <button type="submit" class="btn btn-primary">Actualizar</button>
       </div>
       </form>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
+</div>

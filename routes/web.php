@@ -19,26 +19,29 @@ Route::group(['middleware' => 'auth'], function (){
     Route::resource('payment', 'PaymentController');
     Route::resource('history', 'HistoryController');
     Route::resource('company', 'CompanyController');
+    Route::resource('categories', 'CategoryController');
     Route::get('/', function () {
+        return view('index.index');
+    });
+    Route::get('/home', function () {
         return view('index.index');
     });
     Route::get('/index', 'IndexController@index');
     Route::delete('/articles/{article}', 'ArticleController@destroy');
     Route::patch('/articles/{article}', 'ArticleController@update');
+    Route::patch('/users/{user}', 'UserController@update');
+    
 });
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::group(['middleware' => 'guest'], function () 
 { 
    
 });
   
-
-
 Auth::routes();
 
 

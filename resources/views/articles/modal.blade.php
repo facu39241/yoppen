@@ -15,9 +15,18 @@
 
           <div class="form-group">
             <label for="exampleInputEmail1">Proveedor</label>
-            <select class="form-control" enctype="multipart/form-data" name="provisioner_id" >
+            <select class="form-control"  name="provisioner_id" >
               @foreach($provisioners as $provisioner)
               <option value='{{$provisioner->id}}'>{{$provisioner->name}} </option>
+              @endforeach
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Categoria</label>
+            <select class="form-control"  name="category_id[]" multiple>
+              @foreach($categories as $category)
+              <option value='{{$category->id}}'>{{$category->name}} </option>
               @endforeach
             </select>
           </div>
