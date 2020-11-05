@@ -30,17 +30,29 @@ class ArticleController extends Controller
                 'code',
                 'price',
                 'stock',
-                'description',
-                'image'
+                'description'
             )
         );
+        
+        if ($request->web == 'true') {
+            $article->web = 1;
+        }else {
+            $article->web = 0;
+        }
 
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $name = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path() . "/img_product/", $name);
+            $article->image = $name;
+        }
+        
         $article->save();
         $article->categories()->attach($request->category_id);
 
         return redirect()->to('articles');
     }
-    /**Elimina el registro */
+
 
     public function destroy(article $article)
     {
@@ -68,6 +80,18 @@ class ArticleController extends Controller
         $article->stock = request()->stock;
         $article->image = request()->image;
         $article->description = request()->description;
+        
+        if (request()->hasFile('image')) {
+            $file = request()->file('image');
+            $name = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path() . "/img_product/", $name);
+            $article->image = $name;
+        }
+        if (request()->web == 'true') {
+            $article->web = 1;
+        }else {
+            $article->web = 0;
+        }
 
         $article->save();
         $article->categories()->sync(request()->category_id);

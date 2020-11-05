@@ -10,7 +10,7 @@
 
       <div class="modal-body">
 
-        <form action="/articles/{{$article->id}}" method="POST" role="form">
+        <form action="/articles/{{$article->id}}" method="POST" role="form" enctype='multipart/form-data'>
           {{ method_field('PATCH') }}
           {{ csrf_field() }}
 
@@ -73,6 +73,16 @@
             <p class="help-block">JPN solamente.</p>
           </div>
 
+          <div class="form-group form-check">
+            @if( $article->web == 1 )
+              <input type="checkbox" name="web" value="true" class="form-check-input" id="exampleCheck1" checked>
+            @else
+              <input type="checkbox" name="web" value="true" class="form-check-input" id="exampleCheck1">
+            @endif
+         
+            <label class="form-check-label" for="exampleCheck1">Publicar en web?</label>
+          </div>
+          
           <div class="form-group">
           </div>
       </div>

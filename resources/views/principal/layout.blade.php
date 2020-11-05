@@ -12,7 +12,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{asset('./bower_components/Ionicons/css/ionicons.min.css')}}.">
+  <link rel="stylesheet" href="{{asset('/bower_components/Ionicons/css/ionicons.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
   <!-- Css customer styles-->
   <link rel="stylesheet" href="{{asset('css/customer.css')}}">
+  
 
   <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic')}}">
 </head>
@@ -120,7 +121,7 @@
               </span>
             </a>
             <ul class="treeview-menu" style="display: unblock;">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+              <li><a href="/orders"><i class="fa fa-circle-o"></i> Ingresos</a></li>
               <li><a href="/provisioners"><i class="fa fa-circle-o"></i> Proveedores </a></li>
 
             </ul>
@@ -234,11 +235,18 @@
   <div class="control-sidebar-bg"></div>
   </div>
   <!-- ./wrapper -->
-
+  <!-- utiljs -->
+  <!-- <script rel="stylesheet" href="{{asset('js/util.js')}}"></script>-->
+  <!-- chartjs -->
+  <script href="https://www.chartjs.org/dist/2.9.4/Chart.min.js"></script>
+  <script href="https://www.chartjs.org/samples/latest/utils.js"></script>
   <!-- jQuery 3 -->
   <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
   <!-- Bootstrap 3.3.7 -->
-  <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('bower_components/googleChart/js/loader.js')}}"></script>
+  <script src="{{asset('bower_components/googleChart/js/grafic.js')}}"></script>
+   <!-- Google charts -->
+   <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
   <!-- SlimScroll -->
   <script src="{{asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
   <!-- FastClick -->
@@ -247,6 +255,8 @@
   <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('dist/js/demo.js')}}"></script>
+  <!-- js customer -->
+  <script rel="stylesheet" href="{{asset('js/customer.js')}}"></script>
   <!-- DataTables -->
   <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
   <script src="{{asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
@@ -268,7 +278,7 @@
       })
     })
   </script>
-  <form action="/articles" method='post'></form>
+  
 </body>
 
 

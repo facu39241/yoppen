@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\DB;
+
 class ArticlesSeeder extends Seeder
 {
     /**
@@ -39,7 +41,7 @@ class ArticlesSeeder extends Seeder
 
         DB::table('articles')->insert([
 
-            'provisioner_id'=> '2',
+            'provisioner_id'=> '1',
             'name'=> 'Cascos blancos',
             'code'=> '12232',
             'price'=> '400',

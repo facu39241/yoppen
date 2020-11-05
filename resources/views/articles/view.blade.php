@@ -45,9 +45,17 @@
 
           <div class="form-group">
             <label for="exampleInputFile">Imagen</label>
-            <br><img src="img/{{ $article->image }}" >
+            <br><img class="img-producto" src="{{asset('img_product/' . $article->image)}}" >
+          </div>
 
-            <p class="help-block">JPN solamente.</p>
+          <div class="form-group form-check">
+            @if( $article->web == 1 )
+              <input type="checkbox" name="web" value="true" class="form-check-input" id="exampleCheck1" checked disabled>
+            @else
+              <input type="checkbox" name="web" value="true" class="form-check-input" id="exampleCheck1" disabled>
+            @endif
+         
+            <label class="form-check-label" for="exampleCheck1">Publicar en web?</label>
           </div>
 
           <div class="form-group">

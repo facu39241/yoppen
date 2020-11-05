@@ -57,17 +57,11 @@ Yoppen | Artículos
               <td>
                 <a data-toggle="modal" name="view" data-target="#view-default-{{$article->id}}" class='btn btn-success pull'><i class='fa fa-eye'></i></a>
                 <a data-toggle="modal" name="modify" data-target="#modify-default-{{$article->id}}" class='btn btn-warning pull'><i class='fa fa-pencil'></i></a>
-                <a>
-                  <form action="articles/{{ $article->id }}" method="POST">
-                    {{ method_field('DELETE') }}
-                    {{ csrf_field() }}
-                    <button type="submit" class='btn btn-danger pull '><i class='fa fa-trash'></i></button>
-
-                  </form>
-                </a>
+                <a data-toggle="modal" name="delete" data-target="#delete-default-{{$article->id}}" class='btn btn-danger pull'><i class='fa fa-trash'></i></a>
                 </form>
               </td>
             </tr>
+            @include('articles.delete')
             @endforeach
             @include('articles.modal')
           </tbody>

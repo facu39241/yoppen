@@ -20,6 +20,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::resource('history', 'HistoryController');
     Route::resource('company', 'CompanyController');
     Route::resource('categories', 'CategoryController');
+    Route::resource('orders', 'OrderController');
     Route::get('/', function () {
         return view('index.index');
     });
@@ -42,7 +43,7 @@ Route::group(['middleware' => 'guest'], function ()
    
 });
   
-Auth::routes();
+Auth::routes(["register" => false]);
 
 
 

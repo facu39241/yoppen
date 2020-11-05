@@ -10,7 +10,7 @@
 
       <div class="modal-body">
                
-        <form method="POST"  action="{{route('articles.store')}}">
+        <form method="POST"  action="{{route('articles.store')}}" enctype='multipart/form-data'>
         {{ csrf_field() }}
 
           <div class="form-group">
@@ -60,8 +60,12 @@
 
           <div class="form-group">
             <label for="exampleInputFile">Imagen</label>
-            <input type="file" name="photo" class="form-control" >
+            <input type="file" name="image" class="form-control">
             <p class="help-block">JPN solamente.</p>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" name="web" value="true" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Publicar en web?</label>
           </div>
 
           <div class="form-group">
