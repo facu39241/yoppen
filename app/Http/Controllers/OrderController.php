@@ -21,15 +21,34 @@ class OrderController extends Controller
         return view('order.index')->with(['articles' => $articles, 'provisioners' => $provisioners, 'orders' => $orders]);;
     }
     
+    public function update(Request $request)
+    {
+        $index = 0;
+        
+        foreach ($request->id as $id){
+            $article = Article::find($id);
+            $article->stock = $request->quantity[$index] + $article->stock;
+            $index++;
+            $article->save();
+            return redirect()->to('orders');
+        }
+    }
 
-    public function create()
+    public function create($array)
     {
         //
     }
 
+    public function ajax(Request $request){
+        
+        $articlesForProvisioner = Article::where('provisioner_id', $request->id)->get();
+        return json_encode($articlesForProvisioner);
+
+    }
     
     public function store(Request $request)
     {
+        
         $order = new Order;
         $order->fill(
             $request->only(
@@ -41,7 +60,6 @@ class OrderController extends Controller
         return redirect()->to('orders');
     }
 
-    
     public function show($id)
     {
         //
@@ -52,10 +70,7 @@ class OrderController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    
 
     
     public function destroy($id)

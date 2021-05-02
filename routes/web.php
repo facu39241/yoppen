@@ -31,6 +31,9 @@ Route::group(['middleware' => 'auth'], function (){
     Route::delete('/articles/{article}', 'ArticleController@destroy');
     Route::patch('/articles/{article}', 'ArticleController@update');
     Route::patch('/users/{user}', 'UserController@update');
+    Route::post('ajaxProviders','OrderController@ajax');
+    Route::put('updateProduct' , 'OrderController@update');
+    Route::post('ajaxProduct','ArticleController@ajax');
     
 });
 

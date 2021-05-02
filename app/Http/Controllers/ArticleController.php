@@ -61,17 +61,6 @@ class ArticleController extends Controller
         return redirect('/articles');
     }
 
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
     public function update(article $article)
     {
         $article->name = request()->name;
@@ -96,6 +85,13 @@ class ArticleController extends Controller
         $article->save();
         $article->categories()->sync(request()->category_id);
         return redirect('/articles');
+    }
+    
+    public function ajax(Request $request){
+        
+        $articlesForWeb = Article::where('web', $request)->get();
+        return json_encode($articlesForWeb);
+
     }
 
 }

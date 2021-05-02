@@ -96,7 +96,7 @@ Yoppen | Index
           </div>
           @endforeach
           <div class="box-footer text-center">
-            <a href="/products" class="uppercase">Ver todos los productos</a>
+            <a href="/articles" class="uppercase">Ver todos los productos</a>
           </div>
         </div>
       </div>

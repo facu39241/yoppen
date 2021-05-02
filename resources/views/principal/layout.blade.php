@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -82,7 +83,7 @@
 
           <li><a href="/index"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa fa-wrench"></i>
               <span>Mantenimiento</span>
@@ -97,7 +98,7 @@
             </ul>
           </li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa fa-cubes"></i>
               <span>Almacén</span>
@@ -112,7 +113,7 @@
             </ul>
 
           </li>
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa fa-shopping-cart"></i>
               <span>Compras</span>
@@ -127,7 +128,7 @@
             </ul>
           </li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa fa-dollar"></i>
               <span>Ventas</span>
@@ -138,14 +139,12 @@
             <ul class="treeview-menu" style="display: unblock;">
               <li><a href="/payment"><i class="fa fa-circle-o"></i> Realizar venta</a></li>
               <li><a href="/clients"><i class="fa fa-circle-o"></i> Clientes</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Créditos</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Deudas Pendientes</a></li>
 
 
             </ul>
           </li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa  fa-search"></i>
               <span>Consultas Compras</span>
@@ -155,13 +154,10 @@
             </a>
             <ul class="treeview-menu" style="display: unblock;">
               <li><a href="#"><i class="fa fa-circle-o"></i> Compras Generales </a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Compras Detalladas</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Compras Gral. Proveedores</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Compras Det. Proveedores</a></li>
             </ul>
           </li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa  fa-search"></i>
               <span>Consultas Ventas</span>
@@ -171,32 +167,10 @@
             </a>
             <ul class="treeview-menu" style="display: unblock;">
               <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Generales </a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Detalladas</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Pendientes</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas de Contado</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas a Crédito</a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i> Ventas por Cliente</a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i> Ventas por Empleado</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Mensuales</a></li>
             </ul>
           </li>
-
-          <li class="treeview menu-open">
-            <a href="/payment">
-              <i class="fa fa-unlock-alt"></i>
-              <span>Seguridad</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu" style="display: unblock;">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Copia de seguridad</a></li>
-            </ul>
-          </li>
-
-          <li><a href="#"><i class="fa fa-book"></i> <span>Ayuda</span></a></li>
-
-          <li><a href="/provisioners"><i class="fa  fa-envelope"></i> <span>Acerca de</span></a></li>
 
           <li>
             <a class="fa fa-sign-out" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -256,13 +230,13 @@
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('dist/js/demo.js')}}"></script>
   <!-- js customer -->
-  <script rel="stylesheet" href="{{asset('js/customer.js')}}"></script>
+  <script src="{{asset('js/customer.js')}}"></script>
   <!-- DataTables -->
   <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
   <script src="{{asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
   <script>
     $(document).ready(function() {
-      $('.sidebar-menu').tree()
+      $('.sidebar-menu').tree();
     })
   </script>
   <script>

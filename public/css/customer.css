@@ -1,3 +1,9 @@
+/*Home - Users*/
+
+#nav-home .container {
+    padding: 15px 0px;
+}
+
 /* style customer*/
 .pb-1 {
     padding-bottom: 1em;
@@ -56,9 +62,60 @@
 .deletebtn {
     background-color: #f44336;
 }
+
 div#example2_filter {
     text-align: right;
 }
-.img-producto{
+
+.img-producto {
+    width: 100%;
+}
+
+.table-productForProviders {
+    width: 100%;
+    display: none;
+}
+
+.alert-nullProdict {
+    display: none;
+}
+
+#quantity_wanted {
+    color: #313537;
+    width: 60px;
+    line-height: 20px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #313537;
+    background: none;
+    margin: 0;
+    font-size: 15px;
+    max-width: 60px;
+    padding: 21px;
+}
+
+.input-group-btn-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group-btn-vertical .btn {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #333;
+    position: relative;
+    border-left: none;
+    flex-grow: 1;
+    width: 21px;
+}
+
+.input-group.bootstrap-touchspin {
+    margin: 0.5em 0em;
+}
+
+td.quantityTd {
+    width: 100px;
+}
+table#productosAgregados {
     width: 100%;
 }

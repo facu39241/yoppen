@@ -20,7 +20,7 @@ Yoppen | Ordenes de compra
                     <i class='fa fa-plus'></i>
                 </a>
             </div>
-    
+
             <div class="box-body">
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -38,8 +38,9 @@ Yoppen | Ordenes de compra
                         </tbody>
                     </table>
                 </div>
+                @include('order.modal')
             </div>
-            
+
         </div>
 
     </section>

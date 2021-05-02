@@ -18,6 +18,7 @@ class CreateDetailOrdersTable extends Migration
             $table->unsignedinteger('article_id');
             $table->foreign('article_id')->references('id')->on('articles');
             $table->unsignedinteger('order_id');
+            $table->integer('article_quantity');
             $table->foreign('order_id')->references('id')->on('orders');
 
             $table->timestamps();
