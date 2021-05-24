@@ -11,12 +11,13 @@ use App\Client;
 class Payment extends Model
 {
     protected $fillable = [
+        'user_id',
+        'client_id',
         'type',
-		'code',
-		'date',
-		'amount',
+        'code',
+        'date',
+        'amount'
     ];
-
     public function user()
     {
         return $this->belongTo(User::class);
@@ -24,10 +25,6 @@ class Payment extends Model
     public function client()
     {
         return $this->belongTo(Client::class);
-    }
-    public function company()
-    {
-        return $this->belongTo(Company::class);
     }
     public function detailPayments()
     {

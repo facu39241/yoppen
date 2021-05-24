@@ -17,8 +17,6 @@ class CreatePaymentsTable extends Migration
             $table->increments('id');
             $table->unsignedinteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedinteger('company_id');
-            $table->foreign('company_id')->references('id')->on('companies');
             $table->unsignedinteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients');
             $table->string('type');
@@ -26,7 +24,6 @@ class CreatePaymentsTable extends Migration
             $table->date('date');
             $table->float('amount');
             $table->timestamps();
-            $table->float('payment_amount');
         });
     }
 
