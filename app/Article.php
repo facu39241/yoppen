@@ -5,9 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 use App\Provisioner;
 use App\DetailPayment;
 use App\Category;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Article extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'provisioner_id',
         'name',
@@ -16,6 +18,7 @@ class Article extends Model
         'stock',
         'image',
         'description',
+        'web',
     ];
 
     public function provisioner() 

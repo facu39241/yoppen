@@ -1,65 +1,148 @@
 @extends('principal.layout')
-@section('title') 
+@section('title')
 Yoppen | Index
 @endsection
 @section('content')
 
 
-<!-- Content Wrapper. Contains page content -->
+
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
 
-    <div class="alert alert-warning alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="false">×</button>
-      <h5><i class="icon fa fa-warning"></i> Atencion!</h5>
-       No se ha verificado su correo en la base de datos. Por favor verifique el correo electronico 
-       para poder obtener una mayor seguridad en el sistema.
-    </div>
-  
-      <h2>
+  <section class="content">
+    <div class="row">
 
-        Pagina de inicio.
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-aqua"><i class="ion ion-cube"></i></span>
 
-      </h2>
-      
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-		<div class="box">
-
-           
-            <!-- /.box-header -->
-
-
-
-            
-            <!-- /.box-body -->
-            
-
-            <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Articulos vendidos</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="areaChart" style="height: 249px; width: 685px;" width="856" height="311"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
+          <div class="info-box-content">
+            <span class="info-box-text title-index">Artículos dispobiles</span>
+            <span class="info-box-number date-index">
+              @if($articles == 1)
+              {{$articles}} artículo
+              @else
+              {{$articles}} artículos
+              @endif
+            </span>
           </div>
-          <!-- /.box -->
-    <div>
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-red"><i class="fa ion-android-contacts"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Clientes</span>
+            <span class="info-box-number">
+              @if($clients == 1)
+              {{$clients}} cliente
+              @else
+              {{$clients}} clientes
+              @endif
+
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="clearfix visible-sm-block"></div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Ventas del mes</span>
+            <span class="info-box-number">$ 760</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">Productos agregados recientemente</h3>
+          </div>
+          @foreach($articlesAdd as $articleAdd)
+          <div class="box-body">
+            <ul class="products-list product-list-in-box">
+              <li class="item">
+                <div class="product-img">
+                  @if($articleAdd->image == '')
+                  <img src="dist/img/default-50x50.gif" alt="Product Image">
+                  @else
+                  <img src="{{asset('img_product/' . $articleAdd->image)}}" alt="Product Image">
+                  @endif
+                </div>
+                <div class="product-info">
+                  <a href="/articles" class="product-title">{{$articleAdd->name}}
+                    <span class="label label-warning pull-right">$ {{$articleAdd->price}}</span></a>
+                  <span class="product-description">
+                    {{$articleAdd->description}}
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          @endforeach
+          <div class="box-footer text-center">
+            <a href="/articles" class="uppercase">Ver todos los productos</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Últimas ventas</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="table-responsive">
+              <table class="table no-margin">
+                <thead>
+                  <tr>
+                    <th>Nº de venta</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Monto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                    <td>Facundo</td>
+                    <td>03-11-2020</td>
+                    <td>$ 120</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- /.table-responsive -->
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer clearfix">
+            <a href="/payment" class="btn btn-sm btn-info btn-flat pull-left">Nueva venta</a>
+            <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">Ver todas las ventas</a>
+          </div>
+          <!-- /.box-footer -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
 
 @endsection

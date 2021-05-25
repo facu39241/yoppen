@@ -20,16 +20,22 @@ Route::group(['middleware' => 'auth'], function (){
     Route::resource('history', 'HistoryController');
     Route::resource('company', 'CompanyController');
     Route::resource('categories', 'CategoryController');
+    Route::resource('orders', 'OrderController');
     Route::get('/', function () {
         return view('index.index');
     });
-    Route::get('/home', function () {
+    Route::get('/index', function () {
         return view('index.index');
     });
+    
     Route::get('/index', 'IndexController@index');
+    Route::get('/', 'HomeController@index');
     Route::delete('/articles/{article}', 'ArticleController@destroy');
     Route::patch('/articles/{article}', 'ArticleController@update');
     Route::patch('/users/{user}', 'UserController@update');
+    Route::post('ajaxProviders','OrderController@ajax');
+    Route::put('updateProduct' , 'OrderController@update');
+    Route::post('ajaxProduct','ArticleController@ajax');
     
 });
 
@@ -42,7 +48,7 @@ Route::group(['middleware' => 'guest'], function ()
    
 });
   
-Auth::routes();
+Auth::routes(["register" => false]);
 
 
 

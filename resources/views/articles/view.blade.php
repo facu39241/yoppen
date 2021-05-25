@@ -14,40 +14,49 @@
         {{ csrf_field() }}
 
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="">Nombre del producto</label>
             <br>{{$article->name}}
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="">Código del producto</label>
             <br>{{$article->code}}
           </div>
 
-          <label for="">Precio</label>
-          <br>{{$article->price}}
-      
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
+            <label for="">Precio</label>
+            <br>{{$article->price}}
+          </div>
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="">Cantidad en Stock</label>
             <br>{{$article->stock}}
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="">Proveedor</label>
            <br> {{$article->provisioner->name}}
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
            <label>Descripcíon</label>
            <br> {{$article->description}}
             
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="exampleInputFile">Imagen</label>
-            <br><img src="img/{{ $article->image }}" >
+            <br><img class="img-producto" src="{{asset('img_product/' . $article->image)}}" >
+          </div>
 
-            <p class="help-block">JPN solamente.</p>
+          <div class="form-group form-check">
+            @if( $article->web == 1 )
+              <input type="checkbox" name="web" value="true" class="form-check-input" id="exampleCheck1" checked disabled>
+            @else
+              <input type="checkbox" name="web" value="true" class="form-check-input" id="exampleCheck1" disabled>
+            @endif
+         
+            <label class="form-check-label" for="exampleCheck1">Publicar en web?</label>
           </div>
 
           <div class="form-group">

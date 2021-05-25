@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -12,7 +13,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{asset('./bower_components/Ionicons/css/ionicons.min.css')}}.">
+  <link rel="stylesheet" href="{{asset('/bower_components/Ionicons/css/ionicons.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -20,6 +21,7 @@
   <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
   <!-- Css customer styles-->
   <link rel="stylesheet" href="{{asset('css/customer.css')}}">
+  
 
   <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic')}}">
 </head>
@@ -81,7 +83,7 @@
 
           <li><a href="/index"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa fa-wrench"></i>
               <span>Mantenimiento</span>
@@ -96,7 +98,7 @@
             </ul>
           </li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa fa-cubes"></i>
               <span>Almacén</span>
@@ -111,22 +113,22 @@
             </ul>
 
           </li>
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa fa-shopping-cart"></i>
-              <span>Compras</span>
+              <span>Ingresos</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu" style="display: unblock;">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+              <!-- <li><a href="/orders"><i class="fa fa-circle-o"></i> Ingresos</a></li> -->
               <li><a href="/provisioners"><i class="fa fa-circle-o"></i> Proveedores </a></li>
 
             </ul>
           </li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa fa-dollar"></i>
               <span>Ventas</span>
@@ -137,14 +139,12 @@
             <ul class="treeview-menu" style="display: unblock;">
               <li><a href="/payment"><i class="fa fa-circle-o"></i> Realizar venta</a></li>
               <li><a href="/clients"><i class="fa fa-circle-o"></i> Clientes</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Créditos</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Deudas Pendientes</a></li>
 
 
             </ul>
           </li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa  fa-search"></i>
               <span>Consultas Compras</span>
@@ -154,13 +154,10 @@
             </a>
             <ul class="treeview-menu" style="display: unblock;">
               <li><a href="#"><i class="fa fa-circle-o"></i> Compras Generales </a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Compras Detalladas</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Compras Gral. Proveedores</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Compras Det. Proveedores</a></li>
             </ul>
           </li>
 
-          <li class="treeview menu-open">
+          <li class="treeview">
             <a href="/payment">
               <i class="fa  fa-search"></i>
               <span>Consultas Ventas</span>
@@ -170,32 +167,10 @@
             </a>
             <ul class="treeview-menu" style="display: unblock;">
               <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Generales </a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Detalladas</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Pendientes</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas de Contado</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas a Crédito</a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i> Ventas por Cliente</a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i> Ventas por Empleado</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Mensuales</a></li>
             </ul>
           </li>
-
-          <li class="treeview menu-open">
-            <a href="/payment">
-              <i class="fa fa-unlock-alt"></i>
-              <span>Seguridad</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu" style="display: unblock;">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Copia de seguridad</a></li>
-            </ul>
-          </li>
-
-          <li><a href="#"><i class="fa fa-book"></i> <span>Ayuda</span></a></li>
-
-          <li><a href="/provisioners"><i class="fa  fa-envelope"></i> <span>Acerca de</span></a></li>
 
           <li>
             <a class="fa fa-sign-out" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -234,11 +209,18 @@
   <div class="control-sidebar-bg"></div>
   </div>
   <!-- ./wrapper -->
-
+  <!-- utiljs -->
+  <!-- <script rel="stylesheet" href="{{asset('js/util.js')}}"></script>-->
+  <!-- chartjs -->
+  <script href="https://www.chartjs.org/dist/2.9.4/Chart.min.js"></script>
+  <script href="https://www.chartjs.org/samples/latest/utils.js"></script>
   <!-- jQuery 3 -->
   <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
   <!-- Bootstrap 3.3.7 -->
-  <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('bower_components/googleChart/js/loader.js')}}"></script>
+  <script src="{{asset('bower_components/googleChart/js/grafic.js')}}"></script>
+   <!-- Google charts -->
+   <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
   <!-- SlimScroll -->
   <script src="{{asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
   <!-- FastClick -->
@@ -247,12 +229,14 @@
   <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('dist/js/demo.js')}}"></script>
+  <!-- js customer -->
+  <script src="{{asset('js/customer.js')}}"></script>
   <!-- DataTables -->
   <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
   <script src="{{asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
   <script>
     $(document).ready(function() {
-      $('.sidebar-menu').tree()
+      $('.sidebar-menu').tree();
     })
   </script>
   <script>
@@ -268,7 +252,7 @@
       })
     })
   </script>
-  <form action="/articles" method='post'></form>
+  
 </body>
 
 

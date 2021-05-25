@@ -20,10 +20,12 @@ class CreateArticlesTable extends Migration
             $table->string('name');
             $table->integer('code')->unique();
             $table->float('price');
-            $table->float('stock');
+            $table->integer('stock');
             $table->string('image')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('web')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
