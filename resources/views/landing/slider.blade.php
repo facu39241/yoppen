@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div >
     <!-- Slider main container -->
     <div class="swiper-container">
         <!-- Additional required wrapper -->

@@ -17,7 +17,7 @@ Yoppen | Facturacíon
     <section class="content">
         <div class="box">
             <div class="box-body">
-                <div class="container">
+                <div>
                     <div class="row">
                         <div class="col-md-12">
                             <label for="searchClient">Buscar cliente</label>
@@ -51,7 +51,7 @@ Yoppen | Facturacíon
                     </div>
                 </div>
                 <br>
-                <div class="container">
+                <div>
                     <div class="row">
                         <div class="col-md-12">
                             <table class="table table-striped datatable-articles">
