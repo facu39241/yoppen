@@ -66,12 +66,12 @@
 
           <div class="form-group">
             <label>Descripcíon</label>
-            <textarea class="form-control" rows="3" placeholder="Descripcíon ..." name="descripcion">{{$article->description}}</textarea>
+            <textarea class="form-control" rows="3" value="{{$article->description}}" placeholder="Descripcíon ..." name="description">{{$article->description}}</textarea>
           </div>
 
           <div class="form-group">
             <label for="exampleInputFile">Imagen</label>
-            <input type="file" name="imagen">
+            <input type="file" value="{{$article->image}}" name="image">
 
             <p class="help-block">JPN solamente.</p>
           </div>

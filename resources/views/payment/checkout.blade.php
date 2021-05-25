@@ -72,6 +72,7 @@ Yoppen | Facturacíon
                         </div>
                         <div class="col-md-12">
                             <hr>
+                            <input type="hidden" value="0" id="totalPrices" />
                             <h3 class="total-price text-success"></h3>
                             <div class="MP-button"></div>
                         </div>

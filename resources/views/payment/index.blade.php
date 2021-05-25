@@ -21,7 +21,7 @@ Yoppen | Facturacíon
                     <div class="row">
                         <div class="col-md-12">
                             <label for="searchClient">Buscar cliente</label>
-                            <input type="text" id="searchClient" name="searchClient" class="form-control" placeholder="Buscar cliente">
+                            <input type="text" id="searchClient" name="searchClient" class="form-control" placeholder="Ingrese DNI del cliente">
                             <span id="errorSearchClient" class="bg-danger"></span>
                         </div>
                         <div class="col-md-3">
@@ -69,14 +69,14 @@ Yoppen | Facturacíon
                                         <tr>
                                             <td>{{$article->code}}</td>
                                             <td>{{$article->name}}</td>
-                                            <td>{{$article->price}}</td>
+                                            <td>$ {{$article->price}}</td>
                                             <td>
                                                 <input type="number" min="1"  value="1" data-id="{{$article->id}}" class="quantity-{{$article->id}} validate-quantity">
                                                 <br>
                                                 <span class="text-danger span-quantity-{{$article->id}}"></span>
                                             </td>
                                             <td>
-                                                <button class="add-article" data-id="{{$article->id}}" data-code="{{$article->code}}" data-name="{{$article->name}}"  data-price="{{$article->price}}" >+</button>
+                                                <button class="add-article btn btn-primary pull-center" data-id="{{$article->id}}" data-code="{{$article->code}}" data-name="{{$article->name}}"  data-price="{{$article->price}}" >+</button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -102,12 +102,13 @@ Yoppen | Facturacíon
                         </div>
                         <div class="col-md-12">
                             <hr>
+                            <input type="hidden" value="0" id="totalPrices" />
                             <h3 class="total-price text-success"></h3>
                             <form method="post" action="checkout" id="form-checkout">
                                 @csrf
                                 <input type="hidden" name="data" id="form-data">
                             </form>
-                            <button class="btn btn-success pay">Ir a checkout</button>
+                            <button class="btn btn-success pay" disabled="disabled">Ir a checkout</button>
                         </div>
                     </div>
                 </div>

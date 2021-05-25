@@ -10,11 +10,19 @@ $(document).ready(()=>{
         $.get('getClientByDni/' + $('#searchClient').val(), (data) => {
             if (data == 0) {
                 $("#errorSearchClient").text("DNI no encontrado")
+                $("#errorSearchClient").show();
                 $("#clientName").val("")
                 $("#clientDni").val("")
                 $("#clientDirection").val("")
                 $("#clientPhone").val("")
+                $("#totalPrices").val(0)
+   
             }else{
+                $("#totalPrices").val(1)
+         
+                $(".pay").prop('disabled', false);
+
+                $("#errorSearchClient").hide()
                 $("#clientName").val(data[0].name)
                 $("#clientDni").val(data[0].dni)
                 $("#clientDirection").val(data[0].direction)
@@ -85,7 +93,17 @@ function calculateTotal() {
     $(".p-total").each((x,y) => {
         calculate += parseInt($(y).text());
     })
-    $(".total-price").text("Total= " + calculate)
+    $(".total-price").text("Total= $" + calculate)
+    var totalPrice= $("#totalPrices").val()
+    if (calculate == 0 && totalPrice == 0) {
+        $(".pay").prop('disabled', true);
+    }else {
+        var clienteValidate = $('#clientName').val();
+        if (clienteValidate != '') {
+            $(".pay").prop('disabled', false);
+        }
+       
+    }
 }
 
 function pushData(id,quantity) {
@@ -100,7 +118,7 @@ function pushData(id,quantity) {
 
 function showInTable(id, code, name, quantity, price) {
     fa_trash = $('<i/>', { class: "fa fa-trash" })
-    button_delete = $('<button class="delete_article_'+ id +'" onclick="deleteArticle('+ id +')"/>')
+    button_delete = $('<button class="delete_article_'+ id +' btn btn-danger pull" onclick="deleteArticle('+ id +')"/>')
     delet_td = $('<td/>').append(button_delete.append(fa_trash))
     tr = $('<tr/>', {class: "tr-" + id })
     tr.append($('<td/>',{ text: code }))
