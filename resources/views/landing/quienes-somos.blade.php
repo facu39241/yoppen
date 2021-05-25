@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <img src="/img/we-are.png" alt="imagen-quienesSomos">
+            <img src="/img/we-are.png" alt="imagen-quienesSomos" class="img-weare">
         </div>
         <div class="col-md-5 text-center pt-4">
-            <h2>¿Quienes somos?</h2>
+            <h1>¿Quienes somos?</h1>
             <p class="pt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Curabitur maximus rhoncus ipsum id volutpat. Nunc at 
                 varius eros, a suscipit sapien. Maecenas eu ultrices diam. 

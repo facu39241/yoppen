@@ -24,6 +24,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">  
 
     <!-- Fixed navbar -->
     <nav id="nav-home" class="navbar navbar-default navbar-fixed-top menu-site">
@@ -35,13 +36,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Project name</a>
+                <a class="navbar-brand" href="#">Yoppen</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../navbar/">Default</a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#product-slider">Nuestros productos</a></li>
+                    <li><a href="#we-are">Quienes somos</a></li>
+                    <li ><a href="#brands-section">Nuestras marcas</span></a></li>
                 </ul>
             </div>
 
@@ -61,10 +62,16 @@
     <section id="product-slider">
         @include('landing.product')   
     </section>
-    <section id="product-slider">
+    <section id="we-are">
         @include('landing.quienes-somos')   
     </section>
 
+    <section id="brands-section">
+    @include('landing.brands')
+    </section>
+    <section>
+        @include('landing.footer')
+    </section>
 </body>
 <footer>
     <!-- jQuery 3 -->

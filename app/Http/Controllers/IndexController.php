@@ -23,6 +23,10 @@ class IndexController extends Controller
         
         $sale = Payment::selectRaw('SUM(amount)');
         
-        return view('index.index')->with(['articles' => $articles, 'clients' => $clients, 'articlesAdd' => $articlesAdd]);
+        return view('index.index')->with([
+            'articles' => $articles, 
+            'clients' => $clients, 
+            'articlesAdd' => $articlesAdd
+            ]);
     }
 }

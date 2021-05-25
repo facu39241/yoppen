@@ -132,28 +132,13 @@ Yoppen | Index
           </div>
           <!-- /.box-body -->
           <div class="box-footer clearfix">
-            <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Nueva venta</a>
+            <a href="/payment" class="btn btn-sm btn-info btn-flat pull-left">Nueva venta</a>
             <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">Ver todas las ventas</a>
           </div>
           <!-- /.box-footer -->
         </div>
       </div>
     </div>
-
-
-
-    <div class="row">
-      <div class="col-md-12">
-
-        <script type="text/javascript">
-         
-        </script>
-        </head>
-
-        <body>
-          <div id="piechart" style="width: 900px; height: 500px;"></div>
-        </body>
-        <div>
   </section>
 
 </div>

@@ -89,7 +89,7 @@ class ArticleController extends Controller
     
     public function ajax(Request $request){
         
-        $articlesForWeb = Article::where('web', $request)->get();
+        $articlesForWeb = Article::where('web', '=', 1)->get();
         return json_encode($articlesForWeb);
 
     }

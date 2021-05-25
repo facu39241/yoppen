@@ -10,8 +10,6 @@
 
             <div class="modal-body">
 
-
-
                 <div class="form-group">
                     <label for="exampleInputEmail1">Proveedor</label>
                     <select class="form-control select-provicioner" name='selectProvisioner'>
@@ -34,7 +32,9 @@
 
                     </table>
 
-                    <label for="exampleInputEmail1">Productos agredos</label>
+                    <h4 class="pt-4">
+                        <label for="exampleInputEmail1">Productos agredos</label>
+                    </h4>
 
                     <form method="POST" action="{{url('updateProduct')}}">
                         {{ csrf_field() }}

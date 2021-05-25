@@ -13,7 +13,7 @@
         <form method="POST"  action="{{route('articles.store')}}" enctype='multipart/form-data'>
         {{ csrf_field() }}
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="exampleInputEmail1">Proveedor</label>
             <select class="form-control"  name="provisioner_id" >
               @foreach($provisioners as $provisioner)
@@ -22,7 +22,7 @@
             </select>
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="exampleInputEmail1">Categoria</label>
             <select class="form-control"  name="category_id[]" multiple>
               @foreach($categories as $category)
@@ -31,24 +31,26 @@
             </select>
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="exampleInputEmail1">Nombre del producto</label>
             <input type="text" class="form-control" name="name" placeholder="Ingrese nombre" required >
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="exampleInputEmail1">Código del producto</label>
             <input type="number" class="form-control" name="code" placeholder="Codigo" required>
           </div>
 
-          <label for="exampleInputEmail1">Precio</label>
-          <div class="input-group">
-            <span class="input-group-addon">$</span>
-            <input type="text" class="form-control" name="price" required>
-            <span class="input-group-addon">.00</span>
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
+            <label for="exampleInputEmail1">Precio</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" name="price" required>
+              <span class="input-group-addon">.00</span>
+            </div>
           </div>
-      
-          <div class="form-group">
+
+          <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="exampleInputEmail1">Cantidad en Stock</label>
             <input type="number" class="form-control" name="stock" placeholder="Stock" required>
           </div>

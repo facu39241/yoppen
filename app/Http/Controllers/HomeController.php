@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Index;
+use Carbon\Carbon;
+use App\Article;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('index');
+        $articles = Article::where('web', '=', 1);
+
+        // return view('index')->with([
+        //     'articles' => $articles, 
+        //     ]);
     }
 }

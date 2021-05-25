@@ -116,13 +116,13 @@
           <li class="treeview">
             <a href="/payment">
               <i class="fa fa-shopping-cart"></i>
-              <span>Compras</span>
+              <span>Ingresos</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu" style="display: unblock;">
-              <li><a href="/orders"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+              <!-- <li><a href="/orders"><i class="fa fa-circle-o"></i> Ingresos</a></li> -->
               <li><a href="/provisioners"><i class="fa fa-circle-o"></i> Proveedores </a></li>
 
             </ul>
