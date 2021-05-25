@@ -36,18 +36,14 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('ajaxProviders','OrderController@ajax');
     Route::put('updateProduct' , 'OrderController@update');
     Route::post('ajaxProduct','ArticleController@ajax');
-    
+    Route::get('getClientByDni/{dni}','PaymentController@SearchClientByDni');
+    Route::post('checkout/','PaymentController@checkout');
 });
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'guest'], function () 
-{ 
-   
-});
-  
 Auth::routes(["register" => false]);
 
 

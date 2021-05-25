@@ -9,10 +9,15 @@ use App\Payment;
 
 class DetailPayment extends Model
 {
-    public function article()
-    {
-        return $this->belongsTo(Article::class);
-    }
+
+    public $fillable = [
+        'payment_id',
+        'user_id',
+        'name',
+        'code',
+        'price'
+    ];
+
     public function payment()
     {
         return $this->belongsTo(Payment::class);

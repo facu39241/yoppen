@@ -239,6 +239,7 @@
       $('.sidebar-menu').tree();
     })
   </script>
+  @yield('script')
   <script>
     $(function() {
       $('#example1').DataTable()
@@ -250,7 +251,7 @@
         'info': false,
         'autoWidth': false
       })
-    })
+    });
   </script>
   
 </body>

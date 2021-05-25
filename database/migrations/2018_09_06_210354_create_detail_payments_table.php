@@ -17,9 +17,12 @@ class CreateDetailPaymentsTable extends Migration
             $table->increments('id');
             $table->unsignedinteger('payment_id');
             $table->foreign('payment_id')->references('id')->on('payments');
-            $table->unsignedinteger('article_id');
-            $table->foreign('article_id')->references('id')->on('articles');
+            $table->string('name');
+            $table->integer('code');
+            $table->float('price');
+            $table->integer('quantity');
             $table->timestamps();
+            
         });
     }
 

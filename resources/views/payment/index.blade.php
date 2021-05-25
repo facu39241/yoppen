@@ -1,6 +1,6 @@
 @extends('principal.layout')
-@section('title') 
-Yoppen | Facturacíon 
+@section('title')
+Yoppen | Facturacíon
 @endsection
 @section('content')
 
@@ -9,75 +9,117 @@ Yoppen | Facturacíon
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h2>
-        Ventas.
-      </h2>
-      
+        <h2>
+            Ventas.
+        </h2>
     </section>
-
     <!-- Main content -->
     <section class="content">
-		<div class="box">
-      <div class="box-header">
-        <div>
-        <div class="box-body">
-         <table id="example" class="table table-bordered table-striped">
-           <thead>
-             <tr>
-              <p class="margin">Número de documento del cliente:</p>
-                <div class="input-group input-group-sm">
-                 <input type="number" class="form-control">
-                   <span class="input-group-btn">
-                   <button type="button" data-target="#modal-default" class="btn btn-info btn-flat">Buscar</button>
-                 </span>
+        <div class="box">
+            <div class="box-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="searchClient">Buscar cliente</label>
+                            <input type="text" id="searchClient" name="searchClient" class="form-control" placeholder="Buscar cliente">
+                            <span id="errorSearchClient" class="bg-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <label>Nombre y apellido:</label><br>
+                                <input type="text" id="clientName" class="form-ontrol disabled" name="clientName" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <label>Numero de documento/CUIL:</label><br>
+                                <input type="text" id="clientDni" class="form-ontrol disabled" name="clientDni" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <label>Dirección:</label><br>
+                                <input type="text" id="clientDirection" class="form-ontrol disabled" name="clientDirection" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <label>Tel/Cel:</label><br>
+                                <input type="text" id="clientPhone" class="form-ontrol disabled" name="clientPhone" disabled>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </tr>
-        
-  <tr>
-    <th>Nombre y Apellido <input type="text" class="form-control"  disabled=""></th>
-    <th>Dirección <input type="text" class="form-control"  disabled=""></th>
-    <th>Número de documento/CUIL <input type="text" class="form-control"  disabled=""></th>
-    <th>Imuesto Agregado <input type="text" class="form-control"  disabled=""></th>
-  </tr>
-
-  <tr>
-    <div class="col-sm-9 col-lg-12 main" id="VerDetallePedido">
-    <div class="table-responsive">
-     <table class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" border="1" id="tblDetallePedido">
-       <tr>
-          <tr><button type="button" id="btnBuscarDetIng" class="btn btn-info"><i class="fa fa-search"></i>
-            Buscar Articulos </button></tr>
-          </tr>
-           <thead>
-             <tr>
-               <th>Articulo</th>
-               <th>Codigo</th>
-               <th>Serie</th>
-               <th>Stock</th>
-               <th>P. Venta</th>
-               <th>Cantidad</th>
-               <th>Descuento</th>
-               <th>Eliminar</th>
-              </tr>
-             </thead>
-                            
-      </table>
-    </div>
-  </div>
- </tr>
- </thead>
- </table>
-  </div>
-  </div>
-  </div>
-  <!-- /.box-header -->  
-  <!-- /.box-body -->
-  </div>
- <!-- /.box -->
-</section>
-<!-- /.content -->
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-striped datatable-articles">
+                                <thead>
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Articulo</th>
+                                        <th>P-unitario</th>
+                                        <th>Cantidad</th>
+                                        <th>agregar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($articles as $article)
+                                        <tr>
+                                            <td>{{$article->code}}</td>
+                                            <td>{{$article->name}}</td>
+                                            <td>{{$article->price}}</td>
+                                            <td>
+                                                <input type="number" min="1"  value="1" data-id="{{$article->id}}" class="quantity-{{$article->id}} validate-quantity">
+                                                <br>
+                                                <span class="text-danger span-quantity-{{$article->id}}"></span>
+                                            </td>
+                                            <td>
+                                                <button class="add-article" data-id="{{$article->id}}" data-code="{{$article->code}}" data-name="{{$article->name}}"  data-price="{{$article->price}}" >+</button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Articulo</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio unitario</th>
+                                        <th>Precio final</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="selected-articles">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <hr>
+                            <h3 class="total-price text-success"></h3>
+                            <form method="post" action="checkout" id="form-checkout">
+                                @csrf
+                                <input type="hidden" name="data" id="form-data">
+                            </form>
+                            <button class="btn btn-success pay">Ir a checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
 </div>
-  <!-- /.content-wrapper -->
+<!-- /.content-wrapper -->
 
 @include('payment.modal')
+@endsection
+@section('script')
+    @include('payment.script')
 @endsection
