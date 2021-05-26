@@ -55,10 +55,10 @@ $( document ).ready(function() {
                     var inputHiddend = '<input type="hidden" name="id[]" value="'+ item.id +'">';
                     var numbersProduct = "<input type='number' name='quantity[]' value='1' class='numberProduct" + item.id + "' >";
                     var btn = '<a onClick="btnAgregarProducto('+ item.id +')" class="btn btn-primary pull-right btn-addProductProvicioner" ><i class="fa fa-shopping-cart"></i></a>';
-                    trHTML = '<div class="owl-item" style="width: 277.5px; margin-right: 10px;">'+
-                    '<div class="card" style="width: 18rem;">'+
-                        '<img src="/img_product/'+item.image+'" class="card-img-top" alt="...">'+
-                        '<div class="card-body">'+
+                    trHTML = '<div class="owl-item col-md-3" ">'+
+                    '<div class="card" style="width: 18rem; height:400px">'+
+                        '<img class="card-img-top" src="../img_product/'+item.image+'"  alt="...">'+
+                        '<div class="card-body" style="height:150px">'+
                             '<h5 class="card-title">'+item.name+'</h5>'+
                             '<p class="card-text">'+item.description+'</p>'+
                         '</div>'+

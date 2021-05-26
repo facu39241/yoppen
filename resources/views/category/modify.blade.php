@@ -21,7 +21,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Descripcíon de la categoria</label>
-                        <input type="text" name="description" value="{{$category->description}}" class="form-control" id="inputPassword2" placeholder="Contraseña" required>
+                        <input type="text" name="description" value="{{$category->description}}" class="form-control" id="inputPassword2" placeholder="Descripcion de la categoria" required>
                     </div>
 
                     <div class="modal-footer">

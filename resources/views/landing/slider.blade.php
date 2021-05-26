@@ -1,6 +1,6 @@
 <div >
     <!-- Slider main container -->
-    <div class="swiper-container">
+    <div class="swiper-container" style="padding-top:8rem">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->

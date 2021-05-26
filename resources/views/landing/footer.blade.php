@@ -2,15 +2,12 @@
         <div class="row">
         	<div class="col-md-3 footer-brand animated fadeInLeft">
             	<h2 class="footer">Yoppen</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisl orci. In hac habitasse platea dictumst. Suspendisse elementum sagittis arcu at auctor. Sed congue sodales nisi et ullamcorper. Morbi placerat pellentesque blandit.</p>
-                <p>© 2020, Todos los derechos reservados</p>
+                <p>Tienda de Indumentaria laboral, elementos de protección personal, artículos de seguridad y primeros auxilios. Tenemos marcas como PAMPERO Indumentaria - BORIS Calzado - De Pascale - Protección Personal - MACSI COMPOSITE Calzado. - SEBASTIAN BORIS</p>
+                <p>© 2021, Todos los derechos reservados</p>
             </div>
         	<div class="col-md-4 footer-nav animated fadeInUp">
-            	<h4>Menu —</h4>
             	<div class="col-md-6">
-                    
-                </div>
-            	<div class="col-md-6">
+                <h4>Menu </h4>
                     <ul class="list">
                         <li><a href="#product-slider">Nuestros productos</a></li>
                         <li><a href="#we-are">Quienes somos</a></li>
@@ -21,10 +18,10 @@
         	<div class="col-md-5 footer-social animated fadeInDown">
             	<h4>Nuestras redes</h4>
             	<ul>
-                	<li><a href="#">Facebook</a></li>
-                	<li><a href="#">Twitter</a></li>
-                	<li><a href="#">Instagram</a></li>
-                	<li><a href="#">RSS</a></li>
+                	<li><a href="https://www.facebook.com/yoppenindumentaria/" target="_blank">Facebook</a></li>                	
+                	<li><a href="#">+54 2964 69-2202</a></li>
+                	<li><a href="https://www.google.com/maps/dir/-34.626397,-68.2981548/-53.7851237,-67.7107573/@-43.8531574,-76.7668627,5z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0" target="_blank">25 de Mayo 956, Rio Grande.</a></li>
+                    <li><a href="#">ventas@yoppenrg.com</a></li>
                 </ul>
             </div>
         	<!-- <div class="col-md-3 footer-ns animated fadeInRight">

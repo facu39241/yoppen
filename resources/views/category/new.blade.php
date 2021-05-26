@@ -19,7 +19,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Descripcíon de la categoria</label>
-                        <input type="text" class="form-control" name="description" placeholder="Ingrese email" required>
+                        <input type="text" class="form-control" name="description" placeholder="Ingrese descripción" required>
                     </div>
 
                     <div class="modal-footer">
