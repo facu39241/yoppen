@@ -38,7 +38,14 @@
 
           <div class="form-group col-md-6 col-xs-6 col-sm-12">
             <label for="exampleInputEmail1">Código del producto</label>
-            <input type="number" class="form-control" name="code" placeholder="Codigo" required>
+            <input 
+              type="number" 
+              class="form-control" 
+              name="code" 
+              placeholder="Codigo"  
+              max=999999999999999999999999999999
+              label='Number'
+              required>
           </div>
 
           <div class="form-group col-md-6 col-xs-6 col-sm-12">

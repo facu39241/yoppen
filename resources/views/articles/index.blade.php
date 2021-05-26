@@ -51,7 +51,7 @@ Yoppen | Artículos
             <tr>
               <td>{{$article->name}}</td>
               <td>{{$article->code}}</td>
-              <td>{{$article->price}}</td>
+              <td>$ {{$article->price}}</td>
               <td>{{$article->stock}}</td>
               <td>{{$article->provisioner->name}}</td>
               <td>
