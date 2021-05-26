@@ -8,13 +8,13 @@ use App\Payment;
 class Company extends Model
 {
     protected $fillable = [
-      'name',
+    	'name',
 		'email',
 		'responsable',
 		'direction',
 		'city',
 		'date_init',
-      'cuit',
+    	'cuit',
 		'phone'
 	];
 

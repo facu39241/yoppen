@@ -70,12 +70,12 @@ class ArticleController extends Controller
         $article->image = request()->image;
         $article->description = request()->description;
         
-        // if (request()->hasFile('image')) {
+        if (request()->hasFile('image')) {
             $file = request()->file('image');
             $name = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path() . "/img_product/", $name);
             $article->image = $name;
-        // }
+        }
         if (request()->web == 'true') {
             $article->web = 1;
         }else {

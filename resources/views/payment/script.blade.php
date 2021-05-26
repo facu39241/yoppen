@@ -76,6 +76,18 @@ $(document).ready(()=>{
 
 })
 
+$('.add-article').click((e) => {
+        id = $(e.target).data('id')
+        code = $(e.target).data('code')
+        name = $(e.target).data('name')
+        price = $(e.target).data('price')
+        quantity = $(".quantity-" + id).val()
+        pushdata = pushData(id, quantity)
+        if (pushdata) {
+            showInTable(id, code, name, quantity, price)
+        }
+        calculateTotal();
+    })
 function removeItemFromArr (id) {
     var i = window.articles.indexOf(id)
     i !== -1 && window.articles.splice(i,1)

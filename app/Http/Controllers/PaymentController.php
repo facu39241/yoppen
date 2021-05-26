@@ -6,7 +6,8 @@ use Auth;
 use App\Client; 
 use App\Article; 
 use App\Payment; 
-use App\DetailPayment; 
+use App\DetailPayment;
+use App\Company; 
 use Illuminate\Http\Request;
 use MercadoPago\SDK;
 use MercadoPago\Preference;
@@ -22,7 +23,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        $articles = Article::select(['id','name','code','price'])->get();
+        $articles = Article::select(['id','name','code','price', 'stock'])->where('stock', '>=', 1)->get();
         return view('payment.index', ['articles' => $articles]);
     }
 
@@ -51,12 +52,14 @@ class PaymentController extends Controller
         $preference->save();
 
         $client = Client::find($data->clientId);
+        $company = Company::first();
         $detailPayments = DetailPayment::where('payment_id', $payment->id )->get();
         return view("payment.checkout", [
                                             'preference' => $preference, 
                                             'client' => $client, 
                                             'detailPayments' => $detailPayments,
-                                            'paymentAmount' => $payment->amount
+                                            'paymentAmount' => $payment->amount,
+                                            'company' => $company
                                         ]);
 
     }
@@ -91,6 +94,7 @@ class PaymentController extends Controller
             $detailPayment->quantity = $data->articlesQuantity[$i];
             $detailPayment->price = $article->price;
             $detailPayment->save();
+            Article::find($article->id)->update(['stock' => $article->stock - $data->articlesQuantity[$i]]);
             $i++;
         }
         return $detailPayment;

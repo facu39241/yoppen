@@ -119,3 +119,24 @@ td.quantityTd {
 table#productosAgregados {
     width: 100%;
 }
+
+.d-none, .show-print {
+    display: none;
+}
+.w-30 {
+    width: 30%;
+}
+.m-0 {
+    margin: 0px !important;
+}
+.trComprobante td{
+    padding: 0px !important;
+}
+@media print {
+    .hidden-print {
+      display: none !important;
+    }
+    .show-print {
+        display: block !important;
+    }
+  }

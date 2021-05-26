@@ -71,7 +71,7 @@ Yoppen | Facturacíon
                                             <td>{{$article->name}}</td>
                                             <td>$ {{$article->price}}</td>
                                             <td>
-                                                <input type="number" min="1"  value="1" data-id="{{$article->id}}" class="quantity-{{$article->id}} validate-quantity">
+                                                <input type="number" min="1" max="{{$article->stock}}"  value="1" data-id="{{$article->id}}" class="quantity-{{$article->id}} validate-quantity">
                                                 <br>
                                                 <span class="text-danger span-quantity-{{$article->id}}"></span>
                                             </td>
