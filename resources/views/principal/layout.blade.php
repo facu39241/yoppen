@@ -166,7 +166,7 @@
               </span>
             </a>
             <ul class="treeview-menu" style="display: unblock;">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Ventas Generales </a></li>
+              <li><a href="/history"><i class="fa fa-circle-o"></i> Ventas Generales </a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i> Ventas por Cliente</a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i> Ventas por Empleado</a></li>
             </ul>

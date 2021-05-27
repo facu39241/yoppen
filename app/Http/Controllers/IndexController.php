@@ -21,12 +21,13 @@ class IndexController extends Controller
         $articles = Article::where('stock', '>', 0)->count();
         $clients = Client::count();
         
-        $sale = Payment::selectRaw('SUM(amount)');
+        $sale = Payment::where( 'created_at', '>', Carbon::now()->subDays(7))->take(10)->get();;
         
         return view('index.index')->with([
             'articles' => $articles, 
             'clients' => $clients, 
-            'articlesAdd' => $articlesAdd
+            'articlesAdd' => $articlesAdd,
+            'sales' => $sale
             ]);
     }
 }

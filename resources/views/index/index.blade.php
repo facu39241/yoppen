@@ -112,18 +112,21 @@ Yoppen | Index
                 <thead>
                   <tr>
                     <th>Nº de venta</th>
-                    <th>Cliente</th>
+                    <th>Status</th>
                     <th>Fecha</th>
                     <th>Monto</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                    <td>Facundo</td>
-                    <td>03-11-2020</td>
-                    <td>$ 120</td>
+                @foreach($sales as $sale)
+                <tr>
+                    <td>{{$sale->code}}</td>
+                    <td>{{$sale->type}}</td>
+                    <td>{{$sale->date}}</td>
+                    <td>$ {{$sale->amount}}</td>
                   </tr>
+                @endforeach
+               
 
                 </tbody>
               </table>

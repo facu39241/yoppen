@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Payment;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
@@ -13,7 +14,8 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        return view('history.index');
+        $payments = Payment::all();
+        return view('history.index')->with(['payments' => $payments]);
     }
 
     /**
@@ -34,7 +36,7 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->to('history');
     }
 
     /**

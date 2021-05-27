@@ -15,6 +15,7 @@ class DetailPayment extends Model
         'user_id',
         'name',
         'code',
+        'quantity',
         'price'
     ];
 
